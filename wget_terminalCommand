@@ -1,0 +1,4 @@
+for i in {1..86}
+do
+	wget -i `wget -qO- --content-on-error https://wall.alphacoders.com/by_sub_category.php/?id\=240912\&name\=My+Hero+Academia+Wallpapers\&page\=\$i | sed -n '/<img/s/.*src="\([^"]*\)".*/\1/p' | awk '{gsub("thumb-350-", "");print}'`
+done
